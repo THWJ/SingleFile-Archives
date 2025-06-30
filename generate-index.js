@@ -127,8 +127,8 @@ function generateIndexHtml() {
 <body>
     <div class="container">
         <header>
-            <h1>Jerome的随想</h1>
-            <p class="subtitle">我的HTML文件收藏</p>
+            <h1>Jerome的临时文章和收藏</h1>
+            <p class="subtitle">Life is short, play more!</p>
         </header>
         
         <ul class="file-list">
