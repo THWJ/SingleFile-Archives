@@ -4,45 +4,16 @@ const path = require('path');
 function generateIndexHtml() {
     const currentDir = process.cwd();
     const files = fs.readdirSync(currentDir);
-    
-    // 获取HTML文件并附带文件状态信息
-    const htmlFilesWithStats = files
-        .filter(file => file.endsWith('.html') && file !== 'index.html')
-        .map(file => {
-            const filePath = path.join(currentDir, file);
-            return {
-                name: file,
-                stat: fs.statSync(filePath),
-                path: filePath
-            };
-        })
-        // 按修改时间降序排序（最新的在前面）
-        .sort((a, b) => b.stat.mtimeMs - a.stat.mtimeMs);
+    const htmlFiles = files.filter(file => file.endsWith('.html') && file !== 'index.html');
     
     const links = [];
     const seen = new Set();
     
-    htmlFilesWithStats.forEach(fileObj => {
-        const fileNameWithoutExt = path.basename(fileObj.name, '.html');
+    htmlFiles.forEach(file => {
+        const fileNameWithoutExt = path.basename(file, '.html');
         if (!seen.has(fileNameWithoutExt)) {
             seen.add(fileNameWithoutExt);
-            
-            // 添加文件修改日期显示
-            const modifiedDate = new Date(fileObj.stat.mtime);
-            const formattedDate = modifiedDate.toLocaleDateString('zh-CN', {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-            
-            links.push(`
-                <li class="file-item">
-                    <a href="${fileObj.name}">${fileNameWithoutExt}</a>
-                    <span class="file-date">${formattedDate}</span>
-                </li>
-            `);
+            links.push(`<li class="file-item"><a href="${file}">${fileNameWithoutExt}</a></li>`);
         }
     });
     
@@ -113,9 +84,6 @@ function generateIndexHtml() {
             border: 1px solid var(--border-color);
             border-radius: 4px;
             transition: all 0.2s ease;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
         
         .file-item:hover {
@@ -127,18 +95,12 @@ function generateIndexHtml() {
         .file-item a {
             color: var(--primary-color);
             text-decoration: none;
+            display: block;
             font-size: 1.1em;
-            flex-grow: 1;
         }
         
         .file-item a:hover {
             color: var(--accent-color);
-        }
-        
-        .file-date {
-            color: var(--secondary-color);
-            font-size: 0.85em;
-            opacity: 0.8;
         }
         
         footer {
@@ -158,16 +120,6 @@ function generateIndexHtml() {
             
             h1 {
                 font-size: 1.8em;
-            }
-            
-            .file-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .file-date {
-                margin-top: 5px;
-                font-size: 0.8em;
             }
         }
     </style>
