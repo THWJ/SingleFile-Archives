@@ -1,0 +1,159 @@
+
+body {
+  font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: rgb(51, 51, 51);
+  line-height: 1.6;
+  text-align:left;
+  width: 95%; /* 设置body宽度为800px */
+  font-size: 120%;
+  margin-left: auto; /* 水平自动边距，实现居中 */
+  margin-right: auto; /* 水平自动边距，实现居中 */
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+  cursor: text;
+  
+}
+
+
+h1 {
+  padding-bottom: .3em;
+  font-size: 1.6em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  color:rgb(254, 50, 14);
+}
+h2 {
+  font-size: 1.4em;
+  line-height: 1.225;
+  border-style:hidden hidden hidden solid;
+  border-left-width: 10px;
+  padding-left: 15px;
+  text-align: left;
+  margin-left: 0em; 
+  color:rgb(254, 50, 14);
+}
+h3 {
+  font-size: 1.3em;
+  line-height: 1.43;
+  color:rgb(254, 50, 14);
+}
+h4 {
+  font-size: 1.25em;
+}
+h5 {
+  font-size: 1.25em;
+}
+h6 {
+ font-size: 1.25em;
+  color: #777;
+}
+
+/*
+blockquote,ul,ol,dl,table{
+  margin: 0.8em 0;
+}
+*/
+
+li>ol,li>ul {
+  margin: 0 0;
+}
+
+body p{
+  /* margin-left: 1em ;*/
+  margin-right: 1em ;
+  margin-top: 1em ;
+  margin-bottom: 1em ;
+}
+/*
+body ul p, body ol p, blockquote p{
+  margin-left: 0em !important;
+  margin-right: 0em !important;
+  margin-top: 0em !important;
+  margin-bottom: 0em !important;
+}
+*/
+ul,ol{
+  margin-left: 0em !important;
+  margin-right: 0em !important;
+  margin-top: 0em !important;
+  margin-bottom: 0em !important;
+}
+
+p{
+  font-family: Avenir, "PingFangTC-Light" !important;
+  line-height: 1.8em !important;
+  font-size: 1em !important;
+  box-sizing: border-box !important;
+  word-wrap: break-word !important;
+  text-align: left !important;
+  line-height: 1.8em !important;
+  color: rgb(79, 79, 79) !important;
+  white-space: pre-line;
+  margin-bottom: 0;
+}
+
+ul li p,ol li p{
+  margin:0em;
+  -webkit-margin-before:0em;
+  font-size: 1em; !important;
+}
+
+ul li p span,ol li p span{
+font-family: Avenir, "PingFangTC-Light" !important;
+margin:0em;
+-webkit-margin-before:0em;
+font-size: 1em !important;
+}
+
+
+code {
+background-color: #F8F8F8;
+padding: 0.2em 0.5em;
+font-size: 0.9em;
+border-radius: 2px;
+display: inline; /* added to fix Yahoo block display of inline code */
+white-space: pre-wrap;
+}
+
+blockquote {
+  margin: 20px 0; /* 段落的外边距 */
+  padding: 10px 20px; /* 段落的内边距 */
+  border-left: 3px solid red; /* 左边的红色竖线 */
+  background-color: #f8f8f8; /* 背景颜色，使缩进更明显 */
+  font-style: italic; /* 斜体文本 */
+  color: #666; /* 文本颜色 */
+}
+strong {
+  color: #d79921; 
+  font-weight: bold;
+  padding: 2px 5px; /* 增加内边距 */
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.author-date-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+    gap: 0.5rem;             /* 可选：控制间距 */
+  }
+
+@media (min-width: 900px) {
+  body {
+    width: 800px; /* 设置body宽度为800px */
+    margin-left: auto; /* 水平自动边距，实现居中 */
+    margin-right: auto; /* 水平自动边距，实现居中 */
+  }
+}
+
