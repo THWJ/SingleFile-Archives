@@ -4,7 +4,7 @@ author: "Jerome"
 date: 2025-07-04
 lang: zh
 toc: true
-css: ["../css/wx.css",style.css]
+css: ["../css/wx2.css",style.css]
 abstract: 
 ---
 
@@ -16,6 +16,7 @@ abstract:
 花钱一时爽，还钱火葬场。
 
 特没谱：又不是我还，拜登花的，我花不得？
+
 ## 两房接受加密货币作为抵押资产了
 你敢信。
 
