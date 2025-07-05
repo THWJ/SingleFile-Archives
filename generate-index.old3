@@ -16,8 +16,8 @@ function generateIndexHtml() {
                 path: filePath
             };
         })
-        // 按状态变更时间降序排序（最新的在前面）
-        .sort((a, b) => b.stat.ctimeMs - a.stat.ctimeMs);
+        // 按修改时间降序排序（最新的在前面）
+        .sort((a, b) => b.stat.mtimeMs - a.stat.mtimeMs);
     
     const links = [];
     const seen = new Set();
@@ -27,9 +27,9 @@ function generateIndexHtml() {
         if (!seen.has(fileNameWithoutExt)) {
             seen.add(fileNameWithoutExt);
             
-            // 修改为显示状态变更日期
-            const changedDate = new Date(fileObj.stat.ctime);
-            const formattedDate = changedDate.toLocaleDateString('zh-CN', {
+            // 添加文件修改日期显示
+            const modifiedDate = new Date(fileObj.stat.mtime);
+            const formattedDate = modifiedDate.toLocaleDateString('zh-CN', {
                 year: 'numeric',
                 month: '2-digit',
                 day: '2-digit',
