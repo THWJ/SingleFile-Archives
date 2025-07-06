@@ -4,7 +4,7 @@ author: "Jerome"
 date: 2025-07-06
 lang: zh
 toc: false
-css: ["../css/wx2.css",style.css]
+css: ["../css/wx2.css"]
 abstract: 
 ---
 

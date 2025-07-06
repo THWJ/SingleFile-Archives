@@ -5,7 +5,7 @@ body {
   line-height: 1.6;
   text-align:left;
   width: 95%; /* 设置body宽度为800px */
-  font-size: 120%;
+  font-size: 100%;
   margin-left: auto; /* 水平自动边距，实现居中 */
   margin-right: auto; /* 水平自动边距，实现居中 */
 }
