@@ -125,7 +125,7 @@ white-space: pre-wrap;
 blockquote {
   margin: 20px 0; /* 段落的外边距 */
   padding: 10px 20px; /* 段落的内边距 */
-  border-left: 3px solid red; /* 左边的红色竖线 */
+  border-left: 3px solid rgb(130, 107, 87); /* 左边的红色竖线 */
   background-color: #f8f8f8; /* 背景颜色，使缩进更明显 */
   font-style: italic; /* 斜体文本 */
   color: #666; /* 文本颜色 */
@@ -140,6 +140,72 @@ img {
   width: 100%;
   height: auto;
 }
+
+
+/* 表格容器与基础样式 */
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* 小屏幕横向滚动 */
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  min-width: 600px; /* 保证结构完整 */
+}
+
+/* 表头设计 */
+
+th {
+  background: linear-gradient(to bottom, 
+    rgba(130, 107, 87, 0.7),  /* 暖棕灰 */
+    rgba(210, 200, 190, 0.5)  /* 浅米灰 */
+  );
+  color: rgba(255, 255, 255, 0.9);
+  padding: 12px 15px;
+  text-align: left;
+  position: relative;
+  font-weight: 600;
+  backdrop-filter: blur(2px);
+}
+
+th:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 单元格样式 */
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
+}
+
+/* 斑马纹效果 */
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* 悬停高亮 */
+tr:hover {
+  background-color: #f1f3ff;
+  transform: translateX(2px);
+}
+
+/* 圆角处理 */
+thead tr th:first-child { border-top-left-radius: 8px; }
+thead tr th:last-child { border-top-right-radius: 8px; }
+tbody tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+tbody tr:last-child td:last-child { border-bottom-right-radius: 8px; }
 
 .author-date-container {
     display: flex;
